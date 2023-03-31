@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../pages/e_books_page.dart';
-import '../pages/library_your_books_tab.dart';
+import '../pages/e_books_your_books_pages/e_books_page.dart';
+import '../pages/e_books_your_books_pages/library_your_books_tab.dart';
 
 class HomePageBloc extends ChangeNotifier{
 

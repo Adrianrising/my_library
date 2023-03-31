@@ -4,13 +4,13 @@ import 'package:my_library/data/vos/search_vo/items_vo/items_vo.dart';
 import 'package:my_library/easy_widgets/easy_cached_network_image.dart';
 import 'package:my_library/easy_widgets/easy_list_tile_leading_image_widget.dart';
 import 'package:my_library/easy_widgets/easy_text_widget.dart';
-import 'package:my_library/pages/search_results_page.dart';
+import 'package:my_library/pages/search_pages/search_results_page.dart';
 import 'package:my_library/utils/extension.dart';
 import 'package:provider/provider.dart';
 
-import '../constants/String.dart';
-import '../constants/dimens.dart';
-import '../data/vos/search_history_vo/search_history_vo.dart';
+import '../../constants/String.dart';
+import '../../constants/dimens.dart';
+import '../../data/vos/search_history_vo/search_history_vo.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({Key? key}) : super(key: key);

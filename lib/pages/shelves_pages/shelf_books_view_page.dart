@@ -8,8 +8,8 @@ import 'package:my_library/pages/detail_page.dart';
 import 'package:my_library/utils/extension.dart';
 import 'package:provider/provider.dart';
 
-import '../constants/String.dart';
-import '../data/vos/home_screen_vo/shelf_books_vo/shelf_books_vo.dart';
+import '../../constants/String.dart';
+import '../../data/vos/home_screen_vo/shelf_books_vo/shelf_books_vo.dart';
 
 class ShelfBooksViewPage extends StatelessWidget {
   const ShelfBooksViewPage({Key? key, required this.shelf}) : super(key: key);

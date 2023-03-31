@@ -2,16 +2,16 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:my_library/data/vos/home_screen_vo/books_vo/books_vo.dart';
 import 'package:my_library/easy_widgets/easy_cached_network_image.dart';
-import 'package:my_library/pages/add_to_shelf_page.dart';
+import 'package:my_library/pages/shelves_pages/add_to_shelf_page.dart';
 import 'package:my_library/utils/extension.dart';
 import 'package:provider/provider.dart';
-import '../bloc/e_books_your_books_bloc.dart';
-import '../constants/String.dart';
-import '../constants/dimens.dart';
-import '../data/vos/home_screen_vo/books_lists_vo/books_lists_vo.dart';
-import '../easy_widgets/easy_book_list_horizontal_widget.dart';
-import '../easy_widgets/easy_book_widget.dart';
-import '../view_items/carousel_slider_view.dart';
+import '../../bloc/e_books_your_books_bloc.dart';
+import '../../constants/String.dart';
+import '../../constants/dimens.dart';
+import '../../data/vos/home_screen_vo/books_lists_vo/books_lists_vo.dart';
+import '../../easy_widgets/easy_book_list_horizontal_widget.dart';
+import '../../easy_widgets/easy_book_widget.dart';
+import '../../view_items/carousel_slider_view.dart';
 
 class ShopBooksPage extends StatelessWidget {
   const ShopBooksPage({Key? key}) : super(key: key);

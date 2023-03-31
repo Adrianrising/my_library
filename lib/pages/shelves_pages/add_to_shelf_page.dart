@@ -13,7 +13,7 @@ import 'package:my_library/utils/assets_images_util.dart';
 import 'package:my_library/utils/extension.dart';
 import 'package:provider/provider.dart';
 
-import '../view_items/floating_action_button_extended_view.dart';
+import '../../view_items/floating_action_button_extended_view.dart';
 
 class AddToShelfPage extends StatelessWidget {
   const AddToShelfPage({Key? key, required this.book}) : super(key: key);
