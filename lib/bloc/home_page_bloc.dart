@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../pages/Shop_books_page.dart';
-import '../pages/library_page.dart';
+import '../pages/e_books_page.dart';
+import '../pages/library_your_books_tab.dart';
 
 class HomePageBloc extends ChangeNotifier{
-  ///////////////////////////////////////////////
-  ///////////////// instances  //////////////////
-  ///////////////////////////////////////////////
-  final PageController _pageController=PageController();
 
   ///////////////////////////////////////////////
   ///////////////// attributes //////////////////
@@ -16,14 +12,13 @@ class HomePageBloc extends ChangeNotifier{
 
   List<Widget> bottomNavBarPages=const[
     ShopBooksPage(),
-    LibraryPage()
+    LibraryYourBooksTab()
   ];
   ///////////////////////////////////////////////
   /////////////////  Getters  //////////////////
   ///////////////////////////////////////////////
   int get getBottomNavBarIndex=>_index;
 
-  PageController get getPageController=>_pageController;
 
   ///////////////////////////////////////////////
   /////////////////  setters  //////////////////

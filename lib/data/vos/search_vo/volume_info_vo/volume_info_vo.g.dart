@@ -23,7 +23,7 @@ VolumeInfoVO _$VolumeInfoVOFromJson(Map<String, dynamic> json) => VolumeInfoVO(
       json['pageCount'] as int?,
       json['printType'] as String?,
       (json['categories'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      json['averageRating'] as int?,
+      json['averageRating'] as num?,
       json['ratingsCount'] as int?,
       json['maturityRating'] as String?,
       json['allowAnonLogging'] as bool?,

@@ -26,13 +26,14 @@ class BooksListsVOAdapter extends TypeAdapter<BooksListsVO> {
       fields[6] as num?,
       fields[7] as num?,
       (fields[8] as List?)?.cast<BooksVO>(),
+      containsFavoriteBook: fields[9] as bool?,
     );
   }
 
   @override
   void write(BinaryWriter writer, BooksListsVO obj) {
     writer
-      ..writeByte(9)
+      ..writeByte(10)
       ..writeByte(0)
       ..write(obj.listId)
       ..writeByte(1)
@@ -50,7 +51,9 @@ class BooksListsVOAdapter extends TypeAdapter<BooksListsVO> {
       ..writeByte(7)
       ..write(obj.listImageHeight)
       ..writeByte(8)
-      ..write(obj.books);
+      ..write(obj.books)
+      ..writeByte(9)
+      ..write(obj.containsFavoriteBook);
   }
 
   @override
@@ -80,6 +83,7 @@ BooksListsVO _$BooksListsVOFromJson(Map<String, dynamic> json) => BooksListsVO(
       (json['books'] as List<dynamic>?)
           ?.map((e) => BooksVO.fromJson(e as Map<String, dynamic>))
           .toList(),
+      containsFavoriteBook: json['containsFavoriteBook'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$BooksListsVOToJson(BooksListsVO instance) =>
@@ -93,4 +97,5 @@ Map<String, dynamic> _$BooksListsVOToJson(BooksListsVO instance) =>
       'list_image_width': instance.listImageWidth,
       'list_image_height': instance.listImageHeight,
       'books': instance.books,
+      'containsFavoriteBook': instance.containsFavoriteBook,
     };

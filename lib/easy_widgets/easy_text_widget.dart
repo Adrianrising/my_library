@@ -7,18 +7,20 @@ class EasyTextWidget extends StatelessWidget {
       required this.text,
       this.color = Colors.black,
       this.fontSize = 14,
-      this.fontWeight = FontWeight.normal})
+      this.fontWeight = FontWeight.normal,
+      this.maxLines=2})
       : super(key: key);
 
   final String text;
   final Color color;
   final double fontSize;
   final FontWeight fontWeight;
+  final int maxLines;
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      maxLines: 2,
+      maxLines: maxLines,
       text,
       style: TextStyle(
         fontSize: FontTypography.getFontSizeByDevice(context, fontSize),

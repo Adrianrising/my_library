@@ -9,7 +9,7 @@ abstract class OverviewDAO{
 
   Stream<List<BooksListsVO>?> overviewBooksFromBoxAsStream();
 
-  void changeIsFavoriteValue(int id,int bookIndex);
+  void changeIsFavoriteValueInOverviewBox(int id,int bookIndex);
 
   void clearOverviewBox();
 

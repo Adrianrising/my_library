@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_library/bloc/home_page_bloc.dart';
 import 'package:provider/provider.dart';
 
+import '../constants/String.dart';
 import '../view_items/search_bar_view.dart';
 
 
@@ -36,8 +37,8 @@ class HomePage extends StatelessWidget {
                 obj.changeBottomNavBarIndex(index);
               },
               items: const [
-                BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home'),
-                BottomNavigationBarItem(icon: Icon(Icons.my_library_books),label: 'Library'),
+                BottomNavigationBarItem(icon: Icon(Icons.home),label: kHomeText),
+                BottomNavigationBarItem(icon: Icon(Icons.my_library_books),label: kLibraryText),
               ],
             );
           },
@@ -47,15 +48,6 @@ class HomePage extends StatelessWidget {
   }
 }
 
-
-
-//PageView(
-//             controller: context.read<HomePageBloc>().getPageController,
-//             children: context.read<HomePageBloc>().bottomNavBarPages,
-//             onPageChanged: (index){
-//               context.read<HomePageBloc>().changeBottomNavBarIndex(index);
-//             },
-//           ),
 
 
 

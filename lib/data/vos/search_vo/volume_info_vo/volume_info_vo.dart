@@ -39,7 +39,7 @@ class VolumeInfoVO{
   List<String> ? categories;
 
   @JsonKey(name: 'averageRating')
-  int ? averageRating;
+  num ? averageRating;
 
   @JsonKey(name: 'ratingsCount')
   int ? ratingCount;

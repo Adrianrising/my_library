@@ -4,48 +4,50 @@ import 'package:json_annotation/json_annotation.dart';
 import '../../../../constants/hive_constants.dart';
 import '../books_vo/books_vo.dart';
 
-
 part 'books_lists_vo.g.dart';
 
 @JsonSerializable()
 @HiveType(typeId: kListsHiveType)
-class BooksListsVO{
+class BooksListsVO {
   @JsonKey(name: 'list_id')
   @HiveField(0)
-  int ? listId;
+  int? listId;
 
   @JsonKey(name: 'list_name')
   @HiveField(1)
-  String ? listName;
+  String? listName;
 
   @JsonKey(name: 'list_name_encoded')
   @HiveField(2)
-  String ? listNameEncoded;
+  String? listNameEncoded;
 
   @JsonKey(name: 'display_name')
   @HiveField(3)
-  String ? displayName;
+  String? displayName;
 
   @JsonKey(name: 'updated')
   @HiveField(4)
-  String ? updated;
+  String? updated;
 
   @JsonKey(name: 'list_image')
   @HiveField(5)
-  String ? listImage;
+  String? listImage;
 
   @JsonKey(name: 'list_image_width')
   @HiveField(6)
-  num ? listImageWidth;
+  num? listImageWidth;
 
   @JsonKey(name: 'list_image_height')
   @HiveField(7)
-  num ? listImageHeight;
+  num? listImageHeight;
 
   @JsonKey(name: 'books')
   @HiveField(8)
-  List<BooksVO> ? books;
+  List<BooksVO>? books;
 
+  @JsonKey(name: 'containsFavoriteBook')
+  @HiveField(9)
+  bool? containsFavoriteBook;
 
   BooksListsVO(
       this.listId,
@@ -56,9 +58,11 @@ class BooksListsVO{
       this.listImage,
       this.listImageWidth,
       this.listImageHeight,
-      this.books);
+      this.books,
+      {this.containsFavoriteBook = false});
 
-  factory BooksListsVO.fromJson(Map<String,dynamic>json)=>_$BooksListsVOFromJson(json);
-  Map<String,dynamic>toJson()=>_$BooksListsVOToJson(this);
+  factory BooksListsVO.fromJson(Map<String, dynamic> json) =>
+      _$BooksListsVOFromJson(json);
+
+  Map<String,dynamic> toJson() => _$BooksListsVOToJson(this);
 }
-

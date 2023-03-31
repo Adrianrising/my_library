@@ -4,6 +4,8 @@ import 'package:my_library/constants/hive_constants.dart';
 import 'package:my_library/data/vos/home_screen_vo/books_lists_vo/books_lists_vo.dart';
 import 'package:my_library/data/vos/home_screen_vo/books_vo/books_vo.dart';
 import 'package:my_library/data/vos/home_screen_vo/buy_links_vo/buy_links_vo.dart';
+import 'package:my_library/data/vos/home_screen_vo/shelf_books_vo/shelf_books_vo.dart';
+import 'package:my_library/data/vos/search_history_vo/search_history_vo.dart';
 import 'package:my_library/pages/home_page.dart';
 
 void main()async {
@@ -12,8 +14,12 @@ void main()async {
   Hive.registerAdapter(BooksListsVOAdapter());
   Hive.registerAdapter(BooksVOAdapter());
   Hive.registerAdapter(BuyLinksVOAdapter());
+  Hive.registerAdapter(ShelfBooksVOAdapter());
+  Hive.registerAdapter(SearchHistoryVOAdapter());
 
+  await Hive.openBox<ShelfBooksVO>(kShelfBooksBoxName);
   await Hive.openBox<BooksListsVO>(kOverviewBoxName);
+  await Hive.openBox<SearchHistoryVO>(kSearchHistoryBoxName);
   runApp(const MyApp());
   
 }

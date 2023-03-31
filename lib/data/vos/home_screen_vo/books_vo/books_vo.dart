@@ -110,9 +110,17 @@ class BooksVO{
   @HiveField(24)
   List<BuyLinksVO> ? buyLinks;
 
-  @JsonKey(name: 'isFavorite')
+  @JsonKey(name: 'is_favorite')
   @HiveField(25)
   bool ? isFavorite;
+
+  @JsonKey(name: 'date_time')
+  @HiveField(26)
+  DateTime ? dateTime;
+
+  @JsonKey(name:'book_index')
+  @HiveField(27)
+  int ? bookIndex;
 
   BooksVO(
       this.ageGroup,
@@ -140,7 +148,9 @@ class BooksVO{
       this.updatedDate,
       this.weeksOnList,
       this.buyLinks,
-      [this.isFavorite=false]);
+      [this.isFavorite=false,
+      this.dateTime,
+      this.bookIndex]);
 
   factory BooksVO.fromJson(Map<String,dynamic>json)=>_$BooksVOFromJson(json);
   Map<String,dynamic>toJson()=>_$BooksVOToJson(this);

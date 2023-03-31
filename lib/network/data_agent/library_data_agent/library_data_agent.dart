@@ -4,5 +4,5 @@ import '../../../data/vos/search_vo/items_vo/items_vo.dart';
 
 abstract class LibraryDataAgent{
   Future<List<BooksListsVO>?> getOverviewBooks();
-  Future<List<ItemsVO>?> getSearchItems();
+  Future<List<ItemsVO>?> getSearchItems(String searchItem);
 }

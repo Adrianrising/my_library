@@ -26,8 +26,8 @@ class LibraryDataAgentImpl extends LibraryDataAgent{
       .first;
 
   @override
-  Future<List<ItemsVO>?> getSearchItems()=>_searchApi
-      .getSearchBooks(kGood)
+  Future<List<ItemsVO>?> getSearchItems(String searchItem)=>_searchApi
+      .getSearchBooks(searchItem)
       .asStream()
       .map((event) => event.items)
       .first;
