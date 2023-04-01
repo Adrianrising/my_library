@@ -6,7 +6,7 @@ import 'package:my_library/pages/shelves_pages/add_to_shelf_page.dart';
 import 'package:my_library/utils/extension.dart';
 import 'package:provider/provider.dart';
 import '../../bloc/e_books_your_books_bloc.dart';
-import '../../constants/String.dart';
+import '../../constants/string.dart';
 import '../../constants/dimens.dart';
 import '../../data/vos/home_screen_vo/books_lists_vo/books_lists_vo.dart';
 import '../../easy_widgets/easy_book_list_horizontal_widget.dart';
@@ -91,7 +91,7 @@ class ShopBooksPage extends StatelessWidget {
                                   onPressedFavIcon: () {
                                     overviewBooks?[listIndex].books?[booksIndex].bookIndex=booksIndex;
                                     context
-                                        .getShopBooksPageBlocInstance()
+                                        .getEbooksYourBooksPageBlocInstance()
                                         .changeFavoriteBookValue(
                                             overviewBooks?[listIndex].listId ??
                                                 -1,

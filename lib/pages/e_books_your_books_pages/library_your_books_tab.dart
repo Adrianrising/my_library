@@ -4,7 +4,7 @@ import 'package:my_library/data/vos/home_screen_vo/books_lists_vo/books_lists_vo
 import 'package:my_library/easy_widgets/easy_text_widget.dart';
 import 'package:my_library/utils/extension.dart';
 import 'package:provider/provider.dart';
-import '../../constants/String.dart';
+import '../../constants/string.dart';
 import '../../constants/dimens.dart';
 import '../../easy_widgets/easy_book_list_horizontal_widget.dart';
 import '../../easy_widgets/easy_book_widget.dart';
@@ -139,7 +139,7 @@ class LibraryYourBooksTab extends StatelessWidget {
                                               false,
                                           onPressedFavIcon: () {
                                             context
-                                                .getShopBooksPageBlocInstance()
+                                                .getEbooksYourBooksPageBlocInstance()
                                                 .changeFavoriteBookValue(
                                                     favBooksList?[listIndex]
                                                             .listId ??

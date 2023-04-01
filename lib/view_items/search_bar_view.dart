@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_library/utils/extension.dart';
 
-import '../constants/String.dart';
+import '../constants/string.dart';
 import '../constants/dimens.dart';
 import '../easy_widgets/easy_text_widget.dart';
 import '../pages/search_pages/search_page.dart';

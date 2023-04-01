@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:my_library/bloc/shelves_tab_bloc.dart';
-import 'package:my_library/constants/String.dart';
+import 'package:my_library/constants/string.dart';
 import 'package:my_library/constants/dimens.dart';
 import 'package:my_library/data/vos/home_screen_vo/books_vo/books_vo.dart';
 import 'package:my_library/data/vos/home_screen_vo/shelf_books_vo/shelf_books_vo.dart';
 import 'package:my_library/easy_widgets/easy_cached_network_image.dart';
 import 'package:my_library/easy_widgets/easy_empty_list_widget.dart';
 import 'package:my_library/easy_widgets/easy_list_tile_leading_image_widget.dart';
-import 'package:my_library/easy_widgets/easy_list_tile_scrollable_widget.dart';
+import 'package:my_library/easy_widgets/easy_list_tile_widget.dart';
 import 'package:my_library/easy_widgets/easy_text_widget.dart';
 import 'package:my_library/utils/assets_images_util.dart';
 import 'package:my_library/utils/extension.dart';

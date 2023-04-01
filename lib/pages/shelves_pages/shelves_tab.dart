@@ -3,13 +3,13 @@ import 'package:my_library/bloc/shelves_tab_bloc.dart';
 import 'package:my_library/data/vos/home_screen_vo/shelf_books_vo/shelf_books_vo.dart';
 import 'package:my_library/easy_widgets/easy_cached_network_image.dart';
 import 'package:my_library/easy_widgets/easy_empty_list_widget.dart';
-import 'package:my_library/easy_widgets/easy_list_tile_scrollable_widget.dart';
+import 'package:my_library/easy_widgets/easy_list_tile_widget.dart';
 import 'package:my_library/easy_widgets/easy_text_widget.dart';
 import 'package:my_library/pages/shelves_pages/shelf_books_view_page.dart';
 import 'package:my_library/utils/extension.dart';
 import 'package:provider/provider.dart';
 
-import '../../constants/String.dart';
+import '../../constants/string.dart';
 import '../../constants/dimens.dart';
 import '../../easy_widgets/easy_list_tile_leading_image_widget.dart';
 import '../../view_items/floating_action_button_extended_view.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_library/easy_widgets/easy_text_widget.dart';
 import 'package:my_library/utils/extension.dart';
-import '../constants/String.dart';
+import '../constants/string.dart';
 import '../constants/dimens.dart';
 class FloatingActionButtonExtended extends StatelessWidget {
   const FloatingActionButtonExtended({

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
-import 'package:my_library/apply/library_apply.dart';
-import 'package:my_library/apply/library_apply_impl.dart';
+import 'package:my_library/data/apply/library_apply.dart';
+import 'package:my_library/data/apply/library_apply_impl.dart';
 import 'package:my_library/data/vos/search_history_vo/search_history_vo.dart';
 import 'package:my_library/utils/debouncer_utils.dart';
 
@@ -22,7 +21,6 @@ class SearchPageBloc extends ChangeNotifier{
 
   List<ItemsVO> ? _searchItems=[];
 
-  List<String> _searchList=[];
 
   List<SearchHistoryVO> ? _searchHistory=[];
 
@@ -36,7 +34,6 @@ class SearchPageBloc extends ChangeNotifier{
 
   Debouncer get getDebouncer=>_debouncer;
 
-  List<String> get getSearchList=>_searchList;
 
   List<SearchHistoryVO> ? get getSearchHistory=>_searchHistory;
 
@@ -57,10 +54,6 @@ class SearchPageBloc extends ChangeNotifier{
     });
   }
 
-  void clearSearchItems(){
-    _searchItems?.clear();
-    notifyListeners();
-  }
 
   void searchHistoryToBox(SearchHistoryVO searchHistory)=>_libraryApply.searchHistoryToBox(searchHistory);
 
@@ -69,7 +62,7 @@ class SearchPageBloc extends ChangeNotifier{
   void deleteSearchHistory(String searchTitle)=>_libraryApply.deleteSearchHistory(searchTitle);
 
   void changeIsSearchingValue() {
-    _isSearching = !_isSearching;
+    _isSearching = _textEditingController.text.isNotEmpty;
     notifyListeners();
   }
 
@@ -77,6 +70,7 @@ class SearchPageBloc extends ChangeNotifier{
   ///////////////// constructor //////////////////
   ///////////////////////////////////////////////
   SearchPageBloc({String ? searchKeyword}){
+    /////////////// if not null, moving to detail page
     if(searchKeyword!=null){
       getSearchItemFromNetwork(searchKeyword);
     }
@@ -86,6 +80,8 @@ class SearchPageBloc extends ChangeNotifier{
       notifyListeners();
     });
   }
+
+
 
   @override
   void notifyListeners() {

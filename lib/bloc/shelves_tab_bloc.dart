@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_library/apply/library_apply.dart';
-import 'package:my_library/apply/library_apply_impl.dart';
+import 'package:my_library/data/apply/library_apply.dart';
+import 'package:my_library/data/apply/library_apply_impl.dart';
 import 'package:my_library/data/vos/home_screen_vo/books_lists_vo/books_lists_vo.dart';
 
 import '../data/vos/home_screen_vo/books_vo/books_vo.dart';

@@ -1,5 +1,7 @@
 //user image
 const String kUserImage="https://images.alphacoders.com/120/thumbbig-1204307.webp";
+
+const String kNullDefaultImage='http://argauto.lv/application/modules/themes/views/default/assets/images/image-placeholder.png';
 //homePage
 const String kSearchPlayBooksText='Search Play Books';
 const String kEbooksText='Ebooks';

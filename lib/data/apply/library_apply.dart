@@ -1,9 +1,9 @@
 import 'package:my_library/data/vos/home_screen_vo/books_lists_vo/books_lists_vo.dart';
 import 'package:my_library/data/vos/home_screen_vo/books_vo/books_vo.dart';
 
-import '../data/vos/home_screen_vo/shelf_books_vo/shelf_books_vo.dart';
-import '../data/vos/search_history_vo/search_history_vo.dart';
-import '../data/vos/search_vo/items_vo/items_vo.dart';
+import '../vos/home_screen_vo/shelf_books_vo/shelf_books_vo.dart';
+import '../vos/search_history_vo/search_history_vo.dart';
+import '../vos/search_vo/items_vo/items_vo.dart';
 
 abstract class LibraryApply{
   Future<List<BooksListsVO>?> getOverviewBooksFromNetwork();

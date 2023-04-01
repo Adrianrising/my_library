@@ -3,11 +3,12 @@ import 'package:my_library/bloc/home_page_bloc.dart';
 import 'package:my_library/bloc/e_books_your_books_bloc.dart';
 import 'package:my_library/bloc/search_page_bloc.dart';
 import 'package:my_library/bloc/shelves_tab_bloc.dart';
-import 'package:my_library/utils/assets_images_util.dart';
 import 'package:provider/provider.dart';
 
+import '../constants/string.dart';
+
 extension Navigation on BuildContext{
-  EBooksYourBooksBloc getShopBooksPageBlocInstance()=>read<EBooksYourBooksBloc>();
+  EBooksYourBooksBloc getEbooksYourBooksPageBlocInstance()=>read<EBooksYourBooksBloc>();
 
   HomePageBloc getHomePageBlocInstance()=>read<HomePageBloc>();
 
@@ -38,7 +39,7 @@ extension TextCorrection on String{
 
   String  nullDefaultImage(){
     if(isEmpty){
-      return 'http://argauto.lv/application/modules/themes/views/default/assets/images/image-placeholder.png';
+      return kNullDefaultImage;
     }
     return this;
   }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_library/bloc/home_page_bloc.dart';
 import 'package:provider/provider.dart';
 
-import '../constants/String.dart';
+import '../constants/string.dart';
 import '../view_items/search_bar_view.dart';
 
 
