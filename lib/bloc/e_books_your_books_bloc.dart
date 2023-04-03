@@ -71,7 +71,7 @@ class EBooksYourBooksBloc extends ChangeNotifier {
                   .toList() ??
               [];
           element.books = favBooks;
-          _favBooks.addAll(favBooks??[]);
+          _favBooks.addAll(favBooks);
           _favBooks=_favBooks.map((e) => e).toList();
         }
       }

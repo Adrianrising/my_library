@@ -10,7 +10,8 @@ class EasyBookWidget extends StatelessWidget {
     required this.bookListName,
     required this.onPressedFavIcon,
     required this.isFavorite,
-    required this.onTapAddToShelf
+    required this.onTapAddToShelf,
+    required this.onTap
   });
 
   final String bookImage;
@@ -19,6 +20,7 @@ class EasyBookWidget extends StatelessWidget {
   final Function onPressedFavIcon;
   final bool isFavorite;
   final Function onTapAddToShelf;
+  final Function onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +29,9 @@ class EasyBookWidget extends StatelessWidget {
           overviewBookScrollHeight,
       margin: const EdgeInsets.symmetric(horizontal: kSP10x),
       child: InkWell(
+        onTap: (){
+          onTap();
+        },
         onLongPress: () {
           showModalBottomSheet(
             context: context,

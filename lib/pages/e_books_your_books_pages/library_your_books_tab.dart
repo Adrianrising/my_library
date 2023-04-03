@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_library/bloc/e_books_your_books_bloc.dart';
 import 'package:my_library/data/vos/home_screen_vo/books_lists_vo/books_lists_vo.dart';
 import 'package:my_library/easy_widgets/easy_text_widget.dart';
+import 'package:my_library/pages/detail_page.dart';
 import 'package:my_library/utils/extension.dart';
 import 'package:provider/provider.dart';
 import '../../constants/string.dart';
@@ -36,7 +37,7 @@ class LibraryYourBooksTab extends StatelessWidget {
                     text: kYourBookText,
                   ),
                   Tab(
-                    text:kShelvesText,
+                    text: kShelvesText,
                   ),
                 ],
               ),
@@ -49,7 +50,8 @@ class LibraryYourBooksTab extends StatelessWidget {
                         return (favBooksList?.isEmpty ?? true)
                             ? Center(
                                 child: SizedBox(
-                                  width: MediaQuery.of(context).size.width*0.8,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.8,
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
@@ -69,13 +71,11 @@ class LibraryYourBooksTab extends StatelessWidget {
                                         height: kSP20x,
                                       ),
                                       const EasyTextWidget(
-                                        text:
-                                        kDescriptionOne,
+                                        text: kDescriptionOne,
                                         color: Colors.grey,
                                       ),
                                       const EasyTextWidget(
-                                        text:
-                                        kDescriptionTwo,
+                                        text: kDescriptionTwo,
                                         color: Colors.grey,
                                       ),
                                       const SizedBox(
@@ -149,8 +149,28 @@ class LibraryYourBooksTab extends StatelessWidget {
                                                             .bookIndex ??
                                                         -1);
                                           },
-                                          onTapAddToShelf: (){
-                                            context.navigateToNextScreen(context,  AddToShelfPage(book:favBooksList![listIndex].books![booksIndex],));
+                                          onTapAddToShelf: () {
+                                            context.navigateToNextScreen(
+                                                context,
+                                                AddToShelfPage(
+                                                  book: favBooksList![listIndex]
+                                                      .books![booksIndex],
+                                                ));
+                                          },
+                                          onTap: () {
+                                            context.navigateToNextScreen(
+                                                context,
+                                                DetailPage(
+                                                    title: favBooksList?[
+                                                                listIndex]
+                                                            .books?[booksIndex]
+                                                            .title ??
+                                                        '',
+                                                    img: favBooksList?[
+                                                                listIndex]
+                                                            .books?[booksIndex]
+                                                            .bookImage ??
+                                                        ''));
                                           },
                                         );
                                       },
@@ -171,5 +191,3 @@ class LibraryYourBooksTab extends StatelessWidget {
     );
   }
 }
-
-

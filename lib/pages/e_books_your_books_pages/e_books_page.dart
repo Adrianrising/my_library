@@ -1,7 +1,5 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:my_library/data/vos/home_screen_vo/books_vo/books_vo.dart';
-import 'package:my_library/easy_widgets/easy_cached_network_image.dart';
+import 'package:my_library/pages/detail_page.dart';
 import 'package:my_library/pages/shelves_pages/add_to_shelf_page.dart';
 import 'package:my_library/utils/extension.dart';
 import 'package:provider/provider.dart';
@@ -24,11 +22,8 @@ class ShopBooksPage extends StatelessWidget {
         length: tabBarLength,
         child: ListView(scrollDirection: Axis.vertical, children: [
           const SizedBox(height: kSP20x),
-
           const CarouselSliderView(),
-
           const SizedBox(height: kSP20x),
-
           const TabBar(
             indicatorColor: Colors.blue,
             labelColor: Colors.blue,
@@ -43,9 +38,7 @@ class ShopBooksPage extends StatelessWidget {
               ),
             ],
           ),
-
           const SizedBox(height: kSP20x),
-
           Selector<EBooksYourBooksBloc, List<BooksListsVO>?>(
               selector: (context, obj) => obj.getOverviewBooks,
               shouldRebuild: (pre, next) => pre != next,
@@ -89,7 +82,9 @@ class ShopBooksPage extends StatelessWidget {
                                           .isFavorite ??
                                       false,
                                   onPressedFavIcon: () {
-                                    overviewBooks?[listIndex].books?[booksIndex].bookIndex=booksIndex;
+                                    overviewBooks?[listIndex]
+                                        .books?[booksIndex]
+                                        .bookIndex = booksIndex;
                                     context
                                         .getEbooksYourBooksPageBlocInstance()
                                         .changeFavoriteBookValue(
@@ -97,8 +92,26 @@ class ShopBooksPage extends StatelessWidget {
                                                 -1,
                                             booksIndex);
                                   },
-                                  onTapAddToShelf: (){
-                                    context.navigateToNextScreen(context,  AddToShelfPage(book:overviewBooks![listIndex].books![booksIndex],));
+                                  onTapAddToShelf: () {
+                                    context.navigateToNextScreen(
+                                        context,
+                                        AddToShelfPage(
+                                          book: overviewBooks![listIndex]
+                                              .books![booksIndex],
+                                        ));
+                                  },
+                                  onTap: () {
+                                    context.navigateToNextScreen(
+                                        context,
+                                        DetailPage(
+                                            title: overviewBooks?[listIndex]
+                                                    .books?[booksIndex]
+                                                    .title ??
+                                                '',
+                                            img: overviewBooks?[listIndex]
+                                                    .books?[booksIndex]
+                                                    .bookImage ??
+                                                ''));
                                   },
                                 );
                               },
@@ -116,5 +129,3 @@ class ShopBooksPage extends StatelessWidget {
     );
   }
 }
-
-
