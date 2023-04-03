@@ -92,6 +92,7 @@ class SearchPageBloc extends ChangeNotifier{
   @override
   void dispose() {
     _dispose=true;
+    _textEditingController.dispose();
     super.dispose();
   }
 }
